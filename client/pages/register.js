@@ -1,6 +1,5 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Layout from '../components/Layout'
-
 
 const Register = () => {
   const [state, setState] = useState({
@@ -12,15 +11,15 @@ const Register = () => {
     buttonText: 'Register'
   })
 
-const {name, email, password, error, success, buttonText} = state
+const { name, email, password, error, success, buttonText } = state
 
 const handleChange = (name) => (e) => {
-  setState({...state, [name]: e.target.value, error: '', success: '', buttonText:'Register'})
-}
+    setState({ ...state, [name]: e.target.value, error: '', success: '', buttonText: 'Register' })
+  }
 
 const handleSubmit = (e) => {
-  e.preventDefault()
-  console.table({ name, email, password})
+    e.preventDefault()
+    console.table({ name, email, password})
 }
 
 const registerForm = () => (
@@ -28,22 +27,22 @@ const registerForm = () => (
       <div className="form-group">
         <input
           value={name}
-          onChange={handleChange('name')} 
-          type="text" className="form-control" 
+          onChange={handleChange('name')}
+          type="text" className="form-control"
           placeholder="Type your name"/>
       </div>
       <div className="form-group">
         <input
           value={email}
-          onChange={handleChange('email')} 
-          type="email" className="form-control" 
+          onChange={handleChange('email')}
+          type="email" className="form-control"
           placeholder="Type your email"/>
       </div>
       <div className="form-group">
         <input
           value={password}
-          onChange={handleChange('password')} 
-          type="password" className="form-control" 
+          onChange={handleChange('password')}
+          type="password" className="form-control"
           placeholder="Type your password"/>
       </div>
       <div className="form-group">
