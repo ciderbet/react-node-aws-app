@@ -4,6 +4,8 @@ import Router from 'next/router'
 import Nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 
+// Progress bar for page loading
+
 Router.onRouteChangeStart = url => Nprogress.start()
 Router.onRouteChangeComplete = url => Nprogress.done()
 Router.onRouteChangeError = url => Nprogress.done()
@@ -15,7 +17,7 @@ const Layout = ({ children }) => {
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
       <link rel="stylesheet" href="/static/css/styles.css"></link>
     </React.Fragment>
