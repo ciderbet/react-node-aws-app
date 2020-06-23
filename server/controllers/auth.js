@@ -9,7 +9,7 @@ AWS.config.update({
     region: process.env.AWS_REGION  
 })
 
-const ses = new AWS.SES({apiVersion: '2010-12-01'})
+const ses = new AWS.SES({ apiVersion: '2010-12-01' })
 
 exports.register = (req, res) => {
   //console.log('REGISTER CONTROLLER', req.body)
@@ -41,7 +41,7 @@ exports.register = (req, res) => {
       .catch(error => {
         console.log('ses email on register', error)
         res.json({
-          error: `We could not verify your email. Please try again.`
+          message: `We could not verify your email. Please try again.`
         })
       })
      })
