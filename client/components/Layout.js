@@ -1,14 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import Nprogress from 'nprogress'
+import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-// Progress bar for page loading
-
-Router.onRouteChangeStart = url => Nprogress.start()
-Router.onRouteChangeComplete = url => Nprogress.done()
-Router.onRouteChangeError = url => Nprogress.done()
+Router.onRouteChangeStart = url => NProgress.start()
+Router.onRouteChangeComplete = url => NProgress.done()
+Router.onRouteChangeError = url => NProgress.done()
 
 const Layout = ({ children }) => {
   const head = () => (
@@ -19,7 +17,7 @@ const Layout = ({ children }) => {
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossOrigin="anonymous"
       />
-      <link rel="stylesheet" href="/static/css/styles.css"></link>
+      <link rel="stylesheet" href="/static/css/styles.css" />
     </React.Fragment>
   )
 
@@ -43,9 +41,11 @@ const Layout = ({ children }) => {
     </ul>
   )
 
-  return <React.Fragment>
-    {head()} {nav()} <div className="container pt-5 pb-5">{children}</div>
-  </React.Fragment>
+  return (
+    <React.Fragment>
+      {head()} {nav()} <div className="container pt-5 pb-5">{children}</div>
+    </React.Fragment>
+  )
 }
 
 export default Layout

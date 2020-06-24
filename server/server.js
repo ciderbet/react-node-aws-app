@@ -7,11 +7,11 @@ require('dotenv').config()
 
 const app = express()
 
-//db
+// db
 mongoose.connect(process.env.DATABASE_CLOUD, { useUnifiedTopology: true, useNewUrlParser: true })
-  .then( () => console.log('DB connected'))
-  .catch( (err) => console.log(err))
-//import routes
+  .then(() => console.log('DB connected'))
+  .catch((err) => console.log(err))
+// import routes
 const authRoutes = require('./routes/auth')
 
 // app middewares
@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(cors({ origin: process.env.CLIENT_URL }))
 
-//middlewares
+// middlewares
 app.use('/api', authRoutes)
 
 const port = process.env.PORT || 8000
